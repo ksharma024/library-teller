@@ -14,7 +14,7 @@ namespace Library
             //set the rental dates for each type via a static field
                 //implement
 
-            //create a list a propulate it with the date in our file
+            //create a list a populate it with the date in our file
             FileIO getFile = new FileIO();
 
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
@@ -28,9 +28,10 @@ namespace Library
             foreach(string s in mediaToRent)
             {
                 //match each needed component
-                //populae with your regex to match the format
+                //populate with your regex to match the format
 
-                Match match = Regex.Match(s, @"");
+                //implement
+                Match match = Regex.Match(s, @"^Type:\s*(.*),Title:\s*(.*),Length:\s*([\w ]*)$");
                 if (match.Success)
                 {
                     //populate each component with the values from your capture groups

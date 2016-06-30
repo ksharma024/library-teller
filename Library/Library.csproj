@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DVD.cs" />
     <Compile Include="FileIO.cs" />
     <Compile Include="IFileInterface.cs" />
     <Compile Include="Media.cs" />
