@@ -19,7 +19,9 @@ namespace Library
 
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
             //implement
-            List<string> mediaToRent = new List<string>();
+            List<string> mediaToRent = getFile.ReturnMediaFile(@"..\..\Media.txt");
+
+            Console.WriteLine(mediaToRent);
             
             //create a new list for us to use to store our media objects to rent
             List<Media> rentedMedia = new List<Media>();
@@ -59,6 +61,7 @@ namespace Library
             }
 
             //halt the program so we can read the output
+            Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }
     }
