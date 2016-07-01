@@ -16,7 +16,7 @@ namespace Library
         
         public Media()
         {
-            RentedDate = DateTime.Today;
+            RentedDate = DateTime.Now;
         }
         
         public abstract void PrintMediaDetails();

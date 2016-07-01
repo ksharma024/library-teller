@@ -11,18 +11,13 @@ namespace Library
     {
         static void Main(string[] args)
         {
-            //set the rental dates for each type via a static field
-                //implement
 
             //create a list a populate it with the date in our file
             FileIO getFile = new FileIO();
 
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
-            //implement
             List<string> mediaToRent = getFile.ReturnMediaFile(@"..\..\Media.txt");
 
-            Console.WriteLine(mediaToRent);
-            
             //create a new list for us to use to store our media objects to rent
             List<Media> rentedMedia = new List<Media>();
 
@@ -32,7 +27,6 @@ namespace Library
                 //match each needed component
                 //populate with your regex to match the format
 
-                //implement
                 Match match = Regex.Match(s, @"^Type:\s*(.*),Title:\s*(.*),Length:\s*([\w ]*)$");
                 if (match.Success)
                 {
@@ -44,12 +38,39 @@ namespace Library
                     //using the components we got figure out which type of object we should create and insert
                     if (type.Equals("Book"))
                     {
+                        Book book = new Book();
+                        book.Title = title;
+                        book.Length = length;
+
+                        //Book book = new Book()
+                        //{
+                        //    Title = title,
+                        //    Length = length
+                        //};
+
+
+                        rentedMedia.Add(book);
                         //create a book object
                         //populate the book object with a title and length
                         //then add the newly created book to rentedMedia
                     }
                     //complete for the DVD and Magazine media types
-                        //implement
+                    if (type.Equals("DVD"))
+                    {
+                        DVD dvd = new DVD();
+                        dvd.Title = title;
+                        dvd.Length = length;
+
+                        rentedMedia.Add(dvd);
+                    }
+                    if (type.Equals("Magazine"))
+                    {
+                        Magazine magazine = new Magazine();
+                        magazine.Title = title;
+                        magazine.Length = length;
+
+                        rentedMedia.Add(magazine);
+                    }
                 }
             }
 
@@ -57,7 +78,7 @@ namespace Library
             foreach (Media mediaItem in rentedMedia)
             {
                 //for each mediaItem call PrintMediaDetails()
-                    //implement
+                mediaItem.PrintMediaDetails();
             }
 
             //halt the program so we can read the output
